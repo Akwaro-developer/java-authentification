@@ -2,7 +2,11 @@ package org.example.demosecuspringapplication.util;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
+
+@Component
 public class JwtUtil {
     private final String secret = "my-secret-key";
     public String generateToken(String username) {

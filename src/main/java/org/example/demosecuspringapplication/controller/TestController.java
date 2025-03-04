@@ -1,5 +1,6 @@
 package org.example.demosecuspringapplication.controller;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,5 +19,10 @@ public class TestController {
     @GetMapping("/admin")
     public String doAdmin(){
         return "admin";
+    }
+    @Secured("ROLE_USER") // Sécuriser cette route pour les utilisateurs avec le rôle USER
+    @GetMapping("/user/verified")
+    public String doUserVerified() {
+        return "verified";
     }
 }
